@@ -60,7 +60,7 @@ dependencies {
     val room_version = "2.4.3"
     implementation("androidx.room:room-runtime:$room_version")
     implementation("androidx.room:room-ktx:$room_version")
-    //kapt("androidx.room:room-compiler:$room_version")
+    ksp("androidx.room:room-compiler:$room_version")
 
     // coroutines
     val coroutines_version = "1.6.4"
