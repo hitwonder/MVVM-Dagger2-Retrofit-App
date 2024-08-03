@@ -69,7 +69,12 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version")
 
+    // dagger 2
     implementation("com.google.dagger:dagger:2.47")
     ksp("com.google.dagger:dagger-compiler:2.47")
+
+    // glide image
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
 
 }

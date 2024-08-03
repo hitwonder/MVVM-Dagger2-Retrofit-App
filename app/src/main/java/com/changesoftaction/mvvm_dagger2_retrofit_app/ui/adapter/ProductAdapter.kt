@@ -3,9 +3,11 @@ package com.changesoftaction.mvvm_dagger2_retrofit_app.ui.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.bumptech.glide.Glide
 import com.changesoftaction.mvvm_dagger2_retrofit_app.R
 import com.changesoftaction.mvvm_dagger2_retrofit_app.model.Products
 
@@ -24,6 +26,10 @@ class ProductAdapter(private val products: List<Products>) :
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
         holder.textView.text = products[position].title
+
+        Glide.with(holder.imageView.context)
+            .load(products[position].image)
+            .into(holder.imageView)
     }
 
     override fun getItemCount(): Int {
@@ -33,4 +39,5 @@ class ProductAdapter(private val products: List<Products>) :
 
 class ProductViewHolder(item: View) : ViewHolder(item) {
     val textView: TextView = item.findViewById(R.id.tvName)
+    val imageView: ImageView = item.findViewById(R.id.ivProduct)
 }
